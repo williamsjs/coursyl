@@ -128,4 +128,4 @@ Fixes/Improvements:
 * Beef up grade report with some stats
 * course_student.max_grade assumes 100 point scale.  So does the last line of current_grade
 * Assignments are assumed to have the same total number of points as the course itself.  Perhaps scale assignments up to the max of the course's scale?
-* Get rid of daily questions altogether (although watch out availability of historical data).
+* Get rid of daily questions altogether (although watch out availability of historical data)..
