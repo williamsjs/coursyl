@@ -25,3 +25,10 @@ function doIt() {
     return true;
   }
 }
+
+function hideMe(elem) {
+  alert(elem.parentElement);
+  elem.parentElement.parentElement.hidden = true;
+  alert(elem.nextSibling.nextSibling);
+  elem.nextSibling.nextSibling.value = true;
+}
