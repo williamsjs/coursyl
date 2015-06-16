@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-  <h3>Grading Scale</h3>
+  <h3 id="cool">Grading Scale</h3>
 
   <p class="lead">List all of the letter grades that can be received along with the minimum
     number grade which earns that letter.  For instance, a 10 point scale starts with (A, 90)
@@ -35,10 +35,10 @@
           </div>
           <div class="span1">
             <% if ff.object.persisted? %>
-              <%= link_to 'Delete', nil, class: "btn btn-danger delete-association" %>
-              <%= ff.check_box :_destroy, class: "destroy", hidden: true %>
+              <%= link_to 'Delete', "#", class: "btn btn-danger delete-association", onclick: "hideIt()" %>
+              <%= ff.check_box :_destroy, class: "destroy" %>
             <% else %>
-              <%= link_to 'Delete', nil, class: "btn btn-danger flush-association" %>
+              <%= link_to 'Delete', "javascript:void(0);", class: "btn btn-danger flush-association" %>
             <% end %>
           </div>
         </div>
@@ -49,7 +49,7 @@
   <%= link_to '<i class="fa fa-plus"></i> Add Grade Threshold'.html_safe, nil, class: "btn btn-success new-association", "data-index" => i %>
 
 
-  <div class="actions">
-    <%= f.submit class: "btn" %>
+  <div class="actions", id="actions">
+    <%= f.submit class: "btn", onclick: "return doIt()" %>
   </div>
 <% end %>

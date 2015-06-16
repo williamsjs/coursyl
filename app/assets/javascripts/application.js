@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+var clickCount = 0;
+
+function doIt() {
+  if (clickCount !== 0) {
+    return false;
+  } else {
+    clickCount = clickCount + 1;
+    return true;
+  }
+}
