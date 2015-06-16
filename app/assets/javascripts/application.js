@@ -21,14 +21,24 @@ function doIt() {
   if (clickCount !== 0) {
     return false;
   } else {
-    clickCount = clickCount + 1;
+    clickCount++;
     return true;
   }
 }
 
-function hideMe(elem) {
-  alert(elem.parentElement);
+function hideDeletedElement(elem) {
   elem.parentElement.parentElement.hidden = true;
-  alert(elem.nextSibling.nextSibling);
   elem.nextSibling.nextSibling.value = true;
+}
+
+function hideAddElement() {
+  lastLink = document.getElementById('last-button');
+  lastLink.parentElement.parentElement.hidden = true;
+}
+
+window.onload = hideAddElement;
+
+function showAddElement() {
+  lastLink = document.getElementById('last-button');
+  lastLink.parentElement.parentElement.hidden = false;
 }
