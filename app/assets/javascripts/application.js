@@ -15,30 +15,41 @@
 //= require d3
 //= require_tree .
 
-var clickCount = 0;
-
 function onlyOnce() {
-  if (clickCount !== 0) {
-    return false;
-  } else {
-    clickCount++;
-    return true;
-  }
-}
-
-function hideDeletedElement(elem) {
-  elem.parentElement.parentElement.hidden = true;
-  elem.nextSibling.nextSibling.value = true;
+  var button = $(event.target);
+  button.prop("disabled", "true");
+  button.closest("form").submit();
 }
 
 function hideAddElement() {
-  lastLink = document.getElementById('last-button');
-  lastLink.parentElement.parentElement.hidden = true;
+  var lastLink = $('#last-button');
+  lastLink.closest('.row').hide();
 }
-
-window.onload = hideAddElement;
 
 function showAddElement() {
-  lastLink = document.getElementById('last-button');
-  lastLink.parentElement.parentElement.hidden = false;
+  var lastLink = $('#last-button');
+  lastLink.closest('.row').show();
 }
+
+function hideDeletedElement() {
+  var button = $('.associations a');
+  button.on('click', function() {
+    var container = $(this).closest(".association.container");
+    container.hide();
+    container.find('.destroy').prop("checked", "true");
+  });
+}
+
+
+
+function smoothScroll() {
+  $('#nav a').on("click", function(){
+    var navId = $(this).attr("href");
+    $('body').animate({scrollTop: $(navId).offset().top}, 'slow');
+    return false;
+  });
+}
+
+$(smoothScroll);
+$(hideAddElement);
+$(hideDeletedElement);
