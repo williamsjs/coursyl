@@ -40,8 +40,6 @@ function hideDeletedElement() {
   });
 }
 
-
-
 function smoothScroll() {
   $('#nav a').on("click", function(){
     var navId = $(this).attr("href");

@@ -1,17 +1,15 @@
-<div id="date-modal" class="modal hide fade">
-  <%= form_tag  do %>
+<div id='date-modal<%="#{assignment.id}"%>' class="modal hide fade">
+  <%= form_for(assignment) do |f|%>
     <div class="fields">
-      <%= label_tag :start_on %>
-      <%= text_field_tag :starts_on %>
+      <%= f.label :active_at %>
+      <%= f.text_field :active_at %>
     </div>
-
     <div class="fields">
-      <%= label_tag :ends_on %>
-      <%= text_field_tag :ends_on %>
+      <%= f.label :due_at %>
+      <%= f.text_field :due_at %>
     </div>
     <div class="actions">
-      <%= submit_tag "add date" %>
+      <%= f.submit "change date" %>
     </div>
   <% end %>
-
 </div>

@@ -2,9 +2,6 @@
 
 <%= render partial: "summary_box", locals: {course: @course, :header => true} %>
 
-
-
-
 <section id="first-section">
   <a id="anchor-description"></a>
   <% if current_user && current_user.teaching?(@course) %>
@@ -86,8 +83,6 @@
     <% end %>
   </section>
 <% end %>
-
-<%= render partial: 'modal_add_date' %>
 
 <% if @course.achievement_grading? %>
   <section>
@@ -205,6 +200,7 @@
             <td><%= percentage(a.percent_of_grade) %></td>
             <td class="text-right">
               <%= render partial: "/assignments/row_buttons", locals: {assignment: a} %>
+              <%= render partial: 'modal_add_date', locals: {assignment: a} %>
             </td>
           </tr>
         <% end %>
