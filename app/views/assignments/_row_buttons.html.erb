@@ -17,4 +17,5 @@
     <%= link_to '<i class="fa fa-bar-chart-o" title="View Grades"></i>'.html_safe, view_grades_assignment_path(assignment) %>
   <% end %>
   <%= link_to 'Edit', edit_assignment_path(assignment), class: "btn btn-mini" %>
+  <%= link_to '', "#date-modal", class: "fa fa-calendar", data: { toggle: 'modal'} %>
 <% end %>

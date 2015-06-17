@@ -1,0 +1,17 @@
+<div id="date-modal" class="modal hide fade">
+  <%= form_tag  do %>
+    <div class="fields">
+      <%= label_tag :start_on %>
+      <%= text_field_tag :starts_on %>
+    </div>
+
+    <div class="fields">
+      <%= label_tag :ends_on %>
+      <%= text_field_tag :ends_on %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "add date" %>
+    </div>
+  <% end %>
+
+</div>
