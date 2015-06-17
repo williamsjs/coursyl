@@ -6,7 +6,7 @@
 
 
 <section id="first-section">
-  <a id="anchor-description" class="anchor-course"></a>
+  <a id="anchor-description"></a>
   <% if current_user && current_user.teaching?(@course) %>
     <h3 class="float-right float-right-header"><%= link_to 'Edit Course Details', edit_course_path(@course), class: "btn" %></h3>
   <% end %>
@@ -22,7 +22,7 @@
   <% last_assignment = @course.last_assignment %>
   <% next_assignment = @course.next_assignment %>
   <section>
-    <a id="anchor-students" class="anchor-course"></a>
+    <a id="anchor-students" class="smoothScroll"></a>
     <% if @course.students.blank? %>
       <h3 class="float-right float-right-header">
         <a href="#student-modal" class="btn btn-success" data-toggle="modal">

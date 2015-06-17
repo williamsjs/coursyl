@@ -24,7 +24,7 @@
       <% if header %>
         <nav class="navbar smooth-nav">
           <div class="navbar-inner">
-            <ul class="nav">
+            <ul class="nav", id="nav">
               <li><%= link_to "Description", '#anchor-description' %></li>
               <li class="divider-vertical"></li>
               <% if current_user && current_user.teaching?(@course) %>
@@ -92,3 +92,11 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#nav a').click(function(){
+    var navId = $(this).attr("href");
+    $('body').animate({scrollTop: $(navId).offset().top}, 'slow');
+    return false;
+  });
+</script>

@@ -17,7 +17,7 @@
 
 var clickCount = 0;
 
-function doIt() {
+function onlyOnce() {
   if (clickCount !== 0) {
     return false;
   } else {
