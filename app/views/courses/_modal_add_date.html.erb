@@ -1,15 +1,24 @@
-<div id='date-modal<%="#{assignment.id}"%>' class="modal hide fade">
-  <%= form_for(assignment) do |f|%>
-    <div class="fields">
-      <%= f.label :active_at %>
-      <%= f.text_field :active_at %>
+<div id="add-date">
+  <div id='date-modal<%="#{assignment.id}"%>' class="modal hide fade">
+    <%= form_for(assignment) do |f|%>
+    <div class="modal-header">
+      <h4>Enter Dates</h4>
     </div>
-    <div class="fields">
-      <%= f.label :due_at %>
-      <%= f.text_field :due_at %>
+    <div class='modal-body'>
+      <div class="fields">
+        <%= f.label :active_at %>
+        <%= f.text_field :active_at %>
+      </div>
+      <div class="fields">
+        <%= f.label :due_at %>
+        <%= f.text_field :due_at %>
+      </div>
     </div>
-    <div class="actions">
-      <%= f.submit "change date" %>
+    <div class="modal-footer">
+      <div class="actions">
+        <%= f.submit "change date" %>
+      </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

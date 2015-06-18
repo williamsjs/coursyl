@@ -138,3 +138,13 @@ td.text-right, th.text-right {
   font-weight: bold;
 }
 
+
+ #add-date {
+   text-align: center;
+
+   input[type=text], input[type=password] {
+     border: 2px solid black;
+     border-radius: 25px;
+     text-align: center;
+     }
+ }
